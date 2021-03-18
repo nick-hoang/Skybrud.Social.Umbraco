@@ -48,7 +48,7 @@
             $scope.mediaByHashtag = null;
             $scope.model.value.hashtag = '';
             $scope.model.value.hashtagId = '';
-            $http.get('https://graph.facebook.com/v6.0/ig_hashtag_search?user_id='
+            $http.get('https://graph.facebook.com/v10.0/ig_hashtag_search?user_id='
                 + $scope.model.value.businessid + '&q=' + $scope.tmpHashtag
                 + '&access_token=' + $scope.model.value.accessToken)
                 .then(function (res) {

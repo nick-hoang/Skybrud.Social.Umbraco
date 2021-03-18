@@ -312,7 +312,7 @@ namespace Skybrud.Social.Umbraco.App_Plugins.Skybrud.Social.Dialogs {
                 AppId = options.ClientId,
                 AppSecret = options.ClientSecret,
                 RedirectUri = options.RedirectUri,
-                Version = "v6.0"
+                Version = "v10.0"
             };
 
             // Exchange the authorization code for a user access token
@@ -412,7 +412,7 @@ namespace Skybrud.Social.Umbraco.App_Plugins.Skybrud.Social.Dialogs {
                 AppId = options.ClientId,
                 AppSecret = options.ClientSecret,
                 RedirectUri = options.RedirectUri + "&pageName=" + Server.UrlEncode(txtInstagramPageName.Text),
-                Version = "v6.0"
+                Version = "v10.0"
             };
 
             // Redirect the user to the Facebook login dialog
