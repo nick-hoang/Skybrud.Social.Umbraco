@@ -337,7 +337,7 @@ namespace Skybrud.Social.Umbraco.App_Plugins.Skybrud.Social.Dialogs {
                 var pageId = FindFacebookPageByName(service, PageName);
                 if (pageId == null)
                 {
-                    Content.Text = "Your facebook page name is not exists, please correct it!";
+                    Content.Text = $"Your facebook page name '{PageName}' does not exist, please correct it.";
                     return;
                 }
 
@@ -349,7 +349,7 @@ namespace Skybrud.Social.Umbraco.App_Plugins.Skybrud.Social.Dialogs {
                 var instagramBusinessAccount = page.Body.JsonObject.GetObject(instagramBusinessAccountField);
                 if (instagramBusinessAccount == null)
                 {
-                    Content.Text = "instagram_business_account is not exists in the response, please try again!";
+                    Content.Text = "instagram_business_account does not exist in the response, please try again.";
                     return;
                 }
 
@@ -437,13 +437,15 @@ namespace Skybrud.Social.Umbraco.App_Plugins.Skybrud.Social.Dialogs {
         {
             var normallizeName = name.Trim().ToLower();
             var result = service.Pages.GetUserPages();
+            var debugInfo = "ALl pages: " + string.Join(",", result.Body.Data.Select(e => e.Name));
             var pageId = result.Body.Data.FirstOrDefault(e => e.Name.ToLower().Trim() == normallizeName);
             while (pageId == null && result.Body.Paging != null && !string.IsNullOrEmpty(result.Body.Paging.Next))
             {
                 result = FacebookPagesResponse.ParseResponse(service.Pages.Raw.Client.DoAuthenticatedGetRequest(result.Body.Paging.Next));
+                debugInfo += string.Join(",", result.Body.Data.Select(e => e.Name));
                 pageId = result.Body.Data.FirstOrDefault(e => e.Name.ToLower().Trim() == normallizeName);
-            }
-
+            }            
+            DebugInfo.Text = debugInfo;
             return pageId;
         }
 

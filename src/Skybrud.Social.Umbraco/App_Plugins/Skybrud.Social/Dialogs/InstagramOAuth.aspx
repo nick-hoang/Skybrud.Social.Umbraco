@@ -37,9 +37,18 @@
             <h1>Instagram OAuth</h1>
         </div>
         <div class="content">
-            <asp:Literal runat="server" ID="Content" />
+            <div>
+                <asp:Literal runat="server" ID="Content" /> 
+            </div>
+            <div style="display: none">
+                <asp:Literal runat="server" ID="DebugInfo" />
+            </div>
             <asp:Panel runat="server" ID="pnlInstagramPageName" Visible="false">
-                Please enter Your Facebook page name that associated with your instagram account:<br />
+                Please enter your Facebook page name that is associated with your Instagram account. Page names can be found on your Facebook page as per the below screenshot example.<br />
+                <a href="../images/codebrewery_easybrew_instagram_business_oauth_sample.png" target="_blank">
+                    <img src="../images/codebrewery_easybrew_instagram_business_oauth_sample.png" alt="" style="width: 300px;" />
+                </a>
+                <br /><br />
                 <asp:Textbox runat="server" ID="txtInstagramPageName"></asp:Textbox> 
                 <asp:RequiredFieldValidator runat="server" id="reqName" controltovalidate="txtInstagramPageName" errormessage="Please enter your facebook page name!" ForeColor="red" />
                 <br /><br />

@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Skybrud.Social.Umbraco.App_Plugins.Skybrud.Social.Dialogs {
-    
-    
-    public partial class InstagramOAuth {
-        
+namespace Skybrud.Social.Umbraco.App_Plugins.Skybrud.Social.Dialogs
+{
+
+
+    public partial class InstagramOAuth
+    {
+
         /// <summary>
         /// form1 control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace Skybrud.Social.Umbraco.App_Plugins.Skybrud.Social.Dialogs {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
+
         /// <summary>
         /// Content control.
         /// </summary>
@@ -29,7 +31,16 @@ namespace Skybrud.Social.Umbraco.App_Plugins.Skybrud.Social.Dialogs {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal Content;
-        
+
+        /// <summary>
+        /// DebugInfo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal DebugInfo;
+
         /// <summary>
         /// pnlInstagramPageName control.
         /// </summary>
@@ -38,7 +49,7 @@ namespace Skybrud.Social.Umbraco.App_Plugins.Skybrud.Social.Dialogs {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnlInstagramPageName;
-        
+
         /// <summary>
         /// txtInstagramPageName control.
         /// </summary>
@@ -47,7 +58,7 @@ namespace Skybrud.Social.Umbraco.App_Plugins.Skybrud.Social.Dialogs {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtInstagramPageName;
-        
+
         /// <summary>
         /// reqName control.
         /// </summary>
@@ -56,7 +67,7 @@ namespace Skybrud.Social.Umbraco.App_Plugins.Skybrud.Social.Dialogs {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator reqName;
-        
+
         /// <summary>
         /// btnInstagramPageNameSubmit control.
         /// </summary>
