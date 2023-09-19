@@ -113,8 +113,8 @@ namespace Skybrud.Social.Umbraco.Instagram.PropertyEditors.OAuth {
         /// <summary>
         /// Initializes a new instance of the InstagramService class.
         /// </summary>
-        public InstagramService GetService() {
-            return _service ?? (_service = InstagramService.CreateFromAccessToken(AccessToken, UseInstagramGraphAPI != null? UseInstagramGraphAPI.Value : false));
+        public InstagramService GetService(string facebookApiVersion = "v18.0") {
+            return _service ?? (_service = InstagramService.CreateFromAccessToken(AccessToken, UseInstagramGraphAPI != null? UseInstagramGraphAPI.Value : false, facebookApiVersion));
         }
         
         /// <summary>
