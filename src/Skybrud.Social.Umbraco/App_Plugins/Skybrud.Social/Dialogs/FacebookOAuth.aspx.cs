@@ -79,7 +79,7 @@ namespace Skybrud.Social.Umbraco.App_Plugins.Skybrud.Social.Dialogs {
             }
 
             // Configure the OAuth client based on the options of the prevalue options
-            FacebookOAuthClient client = new FacebookOAuthClient {
+            FacebookOAuthClient client = new FacebookOAuthClient(PackageHelpers.FacebookApiVersion) {
                 AppId = options.AppId,
                 AppSecret = options.AppSecret,
                 RedirectUri = options.RedirectUri
@@ -127,7 +127,7 @@ namespace Skybrud.Social.Umbraco.App_Plugins.Skybrud.Social.Dialogs {
             try {
 
                 // Initialize the Facebook service (no calls are made here)
-                FacebookService service = FacebookService.CreateFromAccessToken(userAccessToken);
+                FacebookService service = FacebookService.CreateFromAccessToken(userAccessToken, PackageHelpers.FacebookApiVersion);
 
                 // Make a call to the Facebook API to get information about the user
                 FacebookUser me = service.Users.GetUser("me").Body;

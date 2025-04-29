@@ -77,7 +77,7 @@ namespace Skybrud.Social.Umbraco.Facebook.PropertyEditors.OAuth {
         /// result in any calls to the Facebook API.
         /// </summary>
         public FacebookService GetService() {
-            return _service ?? (_service = FacebookService.CreateFromAccessToken(AccessToken));
+            return _service ?? (_service = FacebookService.CreateFromAccessToken(AccessToken, PackageHelpers.FacebookApiVersion));
         }
 
         /// <summary>

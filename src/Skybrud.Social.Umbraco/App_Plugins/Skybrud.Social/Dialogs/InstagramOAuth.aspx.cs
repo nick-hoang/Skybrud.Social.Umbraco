@@ -256,7 +256,7 @@ namespace Skybrud.Social.Umbraco.App_Plugins.Skybrud.Social.Dialogs {
             {
 
                 // Initialize the Instagram service
-                InstagramService service = InstagramService.CreateFromAccessToken(accessToken.Body.AccessToken);
+                InstagramService service = InstagramService.CreateFromAccessToken(accessToken.Body.AccessToken, PackageHelpers.FacebookApiVersion);
 
                 // Get information about the authenticated user
                 InstagramUser user = service.Users.GetSelf().Body.Data;
@@ -307,12 +307,11 @@ namespace Skybrud.Social.Umbraco.App_Plugins.Skybrud.Social.Dialogs {
                 return;
             }
             // Configure the OAuth client based on the options of the prevalue options
-            var client = new FacebookOAuthClient
+            var client = new FacebookOAuthClient(PackageHelpers.FacebookApiVersion)
             {
                 AppId = options.ClientId,
                 AppSecret = options.ClientSecret,
-                RedirectUri = options.RedirectUri,
-                Version = "v18.0"
+                RedirectUri = options.RedirectUri,                
             };
 
             // Exchange the authorization code for a user access token
@@ -407,12 +406,11 @@ namespace Skybrud.Social.Umbraco.App_Plugins.Skybrud.Social.Dialogs {
             }
 
             // Configure the OAuth client based on the options of the prevalue options
-            var client = new FacebookOAuthClient
+            var client = new FacebookOAuthClient(PackageHelpers.FacebookApiVersion)
             {
                 AppId = options.ClientId,
                 AppSecret = options.ClientSecret,
-                RedirectUri = options.RedirectUri + "&pageName=" + Server.UrlEncode(txtInstagramPageName.Text),
-                Version = "v18.0"
+                RedirectUri = options.RedirectUri + "&pageName=" + Server.UrlEncode(txtInstagramPageName.Text),                
             };
 
             // Redirect the user to the Facebook login dialog

@@ -5,6 +5,7 @@
         public static string UmbracoVersion {
             get { return global::Umbraco.Core.Configuration.UmbracoVersion.Current.ToString(); }
         }
+        internal const string FacebookApiVersion = "v22.0";
 
     }
 

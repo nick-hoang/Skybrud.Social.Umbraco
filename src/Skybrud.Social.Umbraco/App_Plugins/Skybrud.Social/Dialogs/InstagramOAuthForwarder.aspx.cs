@@ -189,7 +189,7 @@ namespace Skybrud.Social.Umbraco.App_Plugins.Skybrud.Social.Dialogs
             try
             {
                 // Initialize the Instagram service
-                InstagramService service = InstagramService.CreateFromAccessToken(AccessToken);
+                InstagramService service = InstagramService.CreateFromAccessToken(AccessToken, PackageHelpers.FacebookApiVersion);
 
                 // Get information about the authenticated user
                 InstagramUser user = service.Users.GetSelf().Body.Data;
